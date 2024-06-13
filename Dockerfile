@@ -7,6 +7,10 @@ RUN yum install -y \
     jq \
     && yum clean all
 
+# Set locale for UTF-8 encoding
+ENV LC_ALL=en_US.UTF-8
+ENV LANG=en_US.UTF-8
+
 # Copy the bash script into the container
 COPY notification.sh /usr/local/bin/notification.sh
 
